@@ -79,6 +79,8 @@
         const from = $("#date-from").val();
         const to = $("#date-to").val();
 
+        console.log(from, to);
+
         date1 = new Date(from).getTime();
         date2 = new Date(to).getTime();
 
@@ -90,14 +92,13 @@
         if (from && to) {
           $(".from-out-container").css("display", "block");
           $(".to-out-container").css("display", "block");
+          $("#output-from").text(from);
+          $("#output-to").text(to);
+
+          $("#output").text(Math.abs(date2 - date1) + " Days");
         } else {
           $(".alert").css("display", "block");
         }
-
-        $("#output-from").text(from);
-        $("#output-to").text(to);
-
-        $("#output").text(Math.abs(date2 - date1) + " Days");
       });
     </script>
 
